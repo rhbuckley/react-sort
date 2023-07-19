@@ -58,7 +58,7 @@ const App = () => {
                         <SectionTitle>2. Configure Options</SectionTitle>
 
                         <Slider min={5} max={300} label={`N elements (${arrSize})`} value={arrSize} onChange={setArrSize}></Slider>
-                        <Slider min={1} max={2500} label={`Delay (${delay}ms)`} value={delay} onChange={setDelay}></Slider>
+                        <Slider min={0.005} max={750} label={`Delay (${delay}ms)`} value={delay} onChange={setDelay}></Slider>
                     </Section>
 
                     {/* Here, we are going to add a button to shuffle the array */}

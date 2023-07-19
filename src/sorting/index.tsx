@@ -51,7 +51,7 @@ export const SortingAlgo = ({arr, delay, sort}: SortingProps) => {
     // Note, the typesafing here will be applied by the Sorting
     // Algorithm Class
     const playPause = () => setStart((playing) => !playing);
-    
+
     // eslint-disable-next-line
     const renderNext = useCallback(() => renderFrame(algo.frame + 1), [algo]);
 
@@ -67,6 +67,10 @@ export const SortingAlgo = ({arr, delay, sort}: SortingProps) => {
             if (e.code === "Space")  playPause();
             if (e.code === "ArrowLeft") renderPrev();
             if (e.code === "ArrowRight") renderNext();
+            else return;
+
+            // if we hit space, we do not want to scroll down the page...
+            e.preventDefault(); 
         } 
 
         // add listeners -> keydown is only supported for arrow

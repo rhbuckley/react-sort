@@ -10,5 +10,6 @@ export const SortingWrapper = styled.div`
 
     @media (max-width: 768px) {
         grid-template-columns: 1fr;
+        padding: 10vh 0.5rem;
     }
 `;

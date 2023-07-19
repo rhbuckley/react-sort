@@ -4,6 +4,7 @@ import { InsertionSort } from './insertionSort';
 import { MergeSort } from "./mergeSort";
 import { QuickSort } from "./quickSort";
 import { Colors } from './helpers/colors';
+import { RadixSort } from "./radixSort";
 
 
 // This is the mapping of the sorting algorithm names to their respective classes
@@ -16,6 +17,7 @@ export const Algorithms = {
     merge: MergeSort,
     quick: QuickSort,
     selection: SelectionSort,
+    radix: RadixSort,
 };
   
 export type AlgorithmName = keyof typeof Algorithms;
