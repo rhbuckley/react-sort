@@ -66,6 +66,12 @@ const App = () => {
                         <SectionTitle>3. Array Options</SectionTitle>
 
                         <StyledButton style={{marginTop: "1rem"}} onClick={initArray} ref={shuffleBtn}>Shuffle</StyledButton>
+                        {/* Add buttons for normal sorted array */}
+                        {/* Add button for reverse sorted array */}
+                        {/* Add bytton for normal array */}
+                        {/* add button for normal unimodal left  */}
+                        {/* add button for normal unimodal skewed right */}
+                        {/* add button for partially sorted array (e.g. press shuffle and then shuffle via 5) */}
                     </Section>
                 </div>
 

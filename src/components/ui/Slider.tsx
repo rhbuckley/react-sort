@@ -52,7 +52,7 @@ const InputSlider = styled.input`
         height: 0.75rem;
         margin-top: -4px;
         border-radius: 50%;
-        background: white;
+        background: var(--color-primary);
         cursor: pointer;
     }
 
@@ -61,13 +61,13 @@ const InputSlider = styled.input`
 
     &::-moz-range-track, 
     {
-        background: white;
+        background: var(--color-primary);
         height: 0.15rem;
         border-radius: 0.2rem;
     }
 
     &::-webkit-slider-runnable-track {
-        background: white;
+        background: var(--color-primary);
         height: 0.15rem;
         border-radius: 0.2rem;
     }

@@ -3,7 +3,7 @@ import logo from './logo.svg';
 
 const HeaderDiv = styled.div`
     display: fixed;
-    color: white;
+    color: var(--color-primary);
     width: 100%;
     z-index: 1;
     top: 0;

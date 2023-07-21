@@ -5,7 +5,7 @@ export const HeadingDiv = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 0.2rem;
-    color: white;
+    color: var(--color-primary);
     white-space: nowrap;
 
     margin-bottom: 2rem;

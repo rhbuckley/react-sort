@@ -20,7 +20,7 @@ export const Bar: React.FC<BarProps> = ({ color, margin, transition = 0.5, ...re
     const height = 'percent' in rest ? rest.percent + "%" : rest.value + "px";
 
     if (color === 'default')
-        color = 'white';
+        color = 'var(--color-primary)' as Colors;
     return <div style={{
         height,
         width: `100%`,

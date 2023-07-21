@@ -5,7 +5,7 @@ export const Section = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 0.2rem;
-    color: white;
+    color: var(--color-primary);
     margin-top: 2.3rem;
 `;
 

@@ -6,6 +6,7 @@ export class SelectionSort extends SortingAlgorithm {
    spaceComplexity = 'O(1)';
 
     protected sort() {
+       this.saveStep();
 
         for (let i = 0; i < this.size - 1; i++) {
             let minIndex = i;

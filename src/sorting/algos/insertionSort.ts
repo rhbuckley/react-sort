@@ -6,6 +6,8 @@ export class InsertionSort extends SortingAlgorithm {
     spaceComplexity = 'O(1)';
 
     protected sort() {
+        this.saveStep();
+
         for (let i = 1; i < this.size ; i++) {
             let j = i;
 

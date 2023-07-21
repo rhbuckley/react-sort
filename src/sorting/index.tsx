@@ -211,7 +211,7 @@ const AlgoWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     gap: 0.2rem;
-    color: white;
+    color: var(--color-primary);
     
     /** Keep in mind, that the parent of this already has a 10vh padding, and then
      * there is more offset from the header. We are going to assign this value to the

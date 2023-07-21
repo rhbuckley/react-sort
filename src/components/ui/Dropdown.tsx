@@ -22,7 +22,7 @@ const MainElement = styled.div`
     cursor: pointer;
     padding: 0.5rem 0.8rem;
     gap: 0.5rem;
-    background-color: white;
+    background-color: var(--color-primary);
     color: var(--color-secondary);
     font-family: 'Courier', 'Roboto Mono' ,monospace;
 `;
@@ -33,7 +33,7 @@ const HiddenWrapper = styled.div`
     left: 0;
     top: 100%;
     width: 100%;
-    background-color: white;
+    background-color: var(--color-primary);
     z-index: 1;
 `;
 
@@ -41,7 +41,7 @@ const HiddenElement = styled.div`
     padding: 0.5rem;
     cursor: pointer;
     font-family: 'Courier', 'Roboto Mono' ,monospace;
-    color: black;
+    color: var(--color-secondary);
 `;
 
 export const Dropdown: React.FC<DropdownProps> = ({ options, selected, setSelected }) => {
