@@ -9,6 +9,7 @@ import { Section, SectionTitle } from "./components/ui/Section";
 import { Dropdown } from "./components/ui/Dropdown";
 import { Slider } from "./components/ui/Slider";
 import { StyledButton } from "./components/ui/Buttons";
+import { customOrder, sort5Elements } from "./sorting/customOrder";
 
 
 
@@ -19,12 +20,6 @@ const App = () => {
     const [arrSize, setArrSize] = useState(25);
     const [arr, setArr] = useState(shuffleArray(Array.from({length: arrSize}, (_, index) => index + 1)))
     const [delay, setDelay] = useState(100);
-
-    // This ref is needed to manage the state of the shuffle button. Basically, when you shuffle the
-    // array, you should be able to press space to play, not to shuffle again. Not totally sure how to
-    // correctly initialize this type of ref, but its okay.
-    const shuffleBtn = useRef<HTMLButtonElement>(undefined as any);
-    useEffect(() => shuffleBtn.current?.blur(), [arr]);
 
     // This is the function that we will be using to initialize the array. We don't want to have an empty
     // array
@@ -65,13 +60,12 @@ const App = () => {
                     <Section>
                         <SectionTitle>3. Array Options</SectionTitle>
 
-                        <StyledButton style={{marginTop: "1rem"}} onClick={initArray} ref={shuffleBtn}>Shuffle</StyledButton>
-                        {/* Add buttons for normal sorted array */}
-                        {/* Add button for reverse sorted array */}
-                        {/* Add bytton for normal array */}
-                        {/* add button for normal unimodal left  */}
-                        {/* add button for normal unimodal skewed right */}
-                        {/* add button for partially sorted array (e.g. press shuffle and then shuffle via 5) */}
+                        <StyledButton onClick={initArray}>Shuffle</StyledButton>
+                        <StyledButton onClick={() => setArr(customOrder('sorted', arrSize))}>Sorted</StyledButton>
+                        <StyledButton onClick={() => setArr(customOrder('sorted-desc', arrSize))}>Reverse Sorted</StyledButton>
+                        <StyledButton onClick={() => setArr(customOrder('normal', arrSize))}>Normal</StyledButton>
+                        <StyledButton onClick={() => setArr(customOrder('perfect-bell-curve', arrSize))}>Perfect Bell Curve</StyledButton>
+                        <StyledButton onClick={() => setArr((arr) => sort5Elements(arr))}>Sort 5 Elements</StyledButton>
                     </Section>
                 </div>
 

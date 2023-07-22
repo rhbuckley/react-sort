@@ -28,11 +28,12 @@ export const StyledButton = styled.button`
     border: none;
 
     margin-left: 1rem;
+    margin-top: 1rem;
 
     transition: all 0.2s ease-in-out;
 
     &:hover {
-        background-color: var(--color-primary);
+        background-color: var(--color-secondary);
         color: var(--color-primary);
 
         cursor: pointer;

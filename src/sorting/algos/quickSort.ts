@@ -6,6 +6,7 @@ export class QuickSort extends SortingAlgorithm {
     spaceComplexity = 'O(log(n))';
 
     protected sort() {
+      this.saveStep();
       this.quickSort(0, this.size - 1);
       this.checkSort();
     }
