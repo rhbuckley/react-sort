@@ -54,7 +54,7 @@ export const sort5Elements = (arr: number[]): number[] => {
   // just going to do a basic insertion sort
   for (let idx = 1 ; idx < arr.length && (idx < stop || stop === -1) ; idx++) {
     if (arr[idx] >= arr[idx - 1]) continue;
-    if (stop == -1) stop = Math.floor(idx / 5) * 5 + 5;
+    if (stop === -1) stop = Math.floor(idx / 5) * 5 + 5;
 
     let j = idx;
 
