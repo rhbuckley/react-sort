@@ -1,5 +1,5 @@
 import { SortingAlgo } from "./sorting";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { SortingWrapper } from "./components/sorting/Wrapper";
 import { HeadingDiv, Subtitle, Title } from "./components/ui/Heading";
 import { shuffleArray } from "./sorting/algos/helpers/shuffle";
