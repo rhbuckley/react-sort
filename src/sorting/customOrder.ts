@@ -2,7 +2,7 @@ type SortingOrder = 'sorted' | 'sorted-desc' | 'normal' | 'normal-skew-left' | '
 // Standard Normal variate using Box-Muller transform.
 
 function generateNormalDistribution(mean: number, stdDev: number, size: number, skew: number = 0) {
-    const distribution = [];
+    const distribution: number[] = [];
     
     for (let i = 0; i < size; i++) {
       let u = 0, v = 0;
@@ -16,7 +16,7 @@ function generateNormalDistribution(mean: number, stdDev: number, size: number, 
 
     console.log("Normal:", distribution);
     
-    return distribution.map((val) => Math.floor(val + Math.max(distribution))) as number[];
+    return distribution.map((val) => Math.floor(val + Math.max(distribution) + 1));
 }
 
 function perfectBellCurve(size: number): number[] {
