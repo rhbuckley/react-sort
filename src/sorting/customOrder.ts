@@ -14,7 +14,7 @@ function generateNormalDistribution(mean: number, stdDev: number, size: number, 
       distribution.push(x);
     }
 
-    console.log("Normal:", distribution);
+    console.log("Normal: " + distribution);
     
     return distribution.map((val) => Math.floor(val + Math.max(distribution) + 1));
 }
