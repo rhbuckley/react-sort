@@ -16,7 +16,7 @@ function generateNormalDistribution(mean: number, stdDev: number, size: number, 
 
     console.log(distribution);
     
-    return distribution.map((val) => Math.floor(val + Math.max(distribution)));
+    return distribution.map((val) => Math.floor(val + Math.max(distribution))) as number[];
 }
 
 function perfectBellCurve(size: number): number[] {
