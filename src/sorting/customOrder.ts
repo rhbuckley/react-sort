@@ -15,7 +15,7 @@ function generateNormalDistribution(mean: number, stdDev: number, size: number, 
     }
 
     // we want to know the max value so we can filter out negatives
-    const maxValue = Math.max(distribution) + 1;
+    const maxValue = Math.max(...distribution) + 1;
     const newDistribution = distribution.map((v) => v + maxValue);
     console.log("Normal: " + newDistribution);
 
@@ -36,13 +36,13 @@ export const customOrder = (order: SortingOrder, size: number): number[] => {
     if (order === 'sorted-desc') return new Array(size).fill(0).map((_, i) => size - i);
 
     // normal
-    if (order === 'normal') return generateNormalDistribution(size / 2, size / 4, size).map((x) => Math.round(x));
+    if (order === 'normal') return generateNormalDistribution(size / 2, size / 4, size);
 
     // normal-skew-left
-    if (order === 'normal-skew-left') return generateNormalDistribution(size / 4, size / 2, size).map((x) => Math.round(x), 1.2);
+    if (order === 'normal-skew-left') return generateNormalDistribution(size / 4, size / 2, size, 1.2);
 
     // normal-skew-right
-    if (order === 'normal-skew-right') return generateNormalDistribution(size / 4, size / 2, size).map((x) => Math.round(x), -1.2);
+    if (order === 'normal-skew-right') return generateNormalDistribution(size / 4, size / 2, size, -1.2);
 
     // perfect-bell
     if (order === 'perfect-bell-curve') return perfectBellCurve(size);
