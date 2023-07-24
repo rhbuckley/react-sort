@@ -11,12 +11,12 @@ function generateNormalDistribution(mean: number, stdDev: number, size: number, 
       
       const z1 = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2 * Math.PI * v);
       const x = (mean + skew) * (z1 * stdDev);
-      distribution.push(x);
+      distribution.push("Normal:", x);
     }
 
     console.log(distribution);
     
-    return distribution;
+    return distribution.map((val) => Math.floor(val + Math.max(distribution)));
 }
 
 function perfectBellCurve(size: number): number[] {
