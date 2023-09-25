@@ -19,7 +19,7 @@ export class SortingAlgorithm {
     // This is the current step the array is at. This will be used
     // to access the steps array.
     private step: number = 0;
-    
+
     // This is the array that will be sorted. This will be used
     // to access the array, and will be initially set to the unsorted
     // array, but will be updated as the algorithm progresses.
@@ -35,8 +35,8 @@ export class SortingAlgorithm {
     // colors of each bar in the visualization. This array will
     // be reset after each step of the algorithm, with its values
     // stored in the steps array.
-    protected colors: Colors[] = [];
-    
+    protected colors: string[] | Colors[] = [];
+
     // This is the array of steps that will be used to store the
     // state of the array at each step of the algorithm. This will
     // be used to access the steps of the algorithm.
@@ -51,8 +51,8 @@ export class SortingAlgorithm {
     // Finally, we want to store the algorithm's time complexity
     // and space complexity. This will be used to display the
     // time and space complexity of each algorithm.
-    protected timeComplexity: string = '';
-    protected spaceComplexity: string = '';
+    protected timeComplexity: string = "";
+    protected spaceComplexity: string = "";
 
     constructor(arr: number[]) {
         // Here, we are just updating the values of the class
@@ -65,7 +65,7 @@ export class SortingAlgorithm {
 
         // Initially, we want to set the colors of the bars to
         // the default color.
-        this.colors = new Array(arr.length).fill('default');
+        this.colors = new Array(arr.length).fill("default");
 
         // We want to save this initial, unsorted state of the
         // array as the first step of the algorithm.
@@ -147,7 +147,7 @@ export class SortingAlgorithm {
 
     // Here is the function that will be used as an entrypoint in
     // sorting the algorithm. This function will be overridden in
-    // each of the sorting algorithm classes. 
+    // each of the sorting algorithm classes.
     protected sort() {}
 
     // This is the function that will be used to save the state of
@@ -160,37 +160,37 @@ export class SortingAlgorithm {
             data: this.arr.map((val, i) => ({
                 value: val,
                 percent: this.calcPercentage(val),
-                color: this.colors[i]
+                color: this.colors[i],
             })),
 
             delay: this.delay,
             accesses: this.accesses,
             comparisons: this.comparisons,
             swaps: this.swaps,
-        }
+        };
 
         // save a copy as a step
         this.steps.push(result);
 
         // Reset the colors of the bars to the default color
-        this.colors = new Array(this.arr.length).fill('default');
+        this.colors = new Array(this.arr.length).fill("default");
     }
 
-    // This is the function that will be used to show that the array is, in fact, 
+    // This is the function that will be used to show that the array is, in fact,
     // sorted. This function will be called at the end of the algorithm, and will
-    // show that the array is sorted, with both a visualization, and a logical check. 
+    // show that the array is sorted, with both a visualization, and a logical check.
     // This is not only a nice feature to have, but if we wish to provide a way for
     // a user to edit an algorithm, we want to give them a method to check if their
     // algorithm is correct.
     protected checkSort() {
         // move green cursor from left to right checking if the array is sorted
         for (let i = 0; i < this.size; i++) {
-            this.colors[i] = 'green';
+            this.colors[i] = "green";
 
             this.saveStep();
 
             if (this.arr[i] > this.arr[i + 1]) {
-                this.colors = new Array(this.arr.length).fill('red');
+                this.colors = new Array(this.arr.length).fill("red");
                 return;
             }
         }
@@ -204,8 +204,8 @@ export class SortingAlgorithm {
     // This function also adds coloring to the bars that are being swapped. This
     // allows for the user to see the swap in the visualization.
     protected swap(i: number, j: number, delay = this.delay) {
-        this.colors[i] = 'red';
-        this.colors[j] = 'green';
+        this.colors[i] = "var(--color-bar-swap-1)";
+        this.colors[j] = "var(--color-bar-swap-2)";
 
         [this.arr[i], this.arr[j]] = [this.arr[j], this.arr[i]];
 
@@ -215,10 +215,15 @@ export class SortingAlgorithm {
 
     // This is the function that will allow access to the size of the array in the
     // sorting algorithm
-    get size() { return this.arr.length; }
+    get size() {
+        return this.arr.length;
+    }
 
     // This is the function that will allow access to the array in the sorting algorithm
-    get array() { this.accesses++; return this.arr; }
+    get array() {
+        this.accesses++;
+        return this.arr;
+    }
 
     // We also want to be able to reset the statistics
     public resetStats() {
@@ -228,6 +233,10 @@ export class SortingAlgorithm {
     }
 
     // and... here are the getters for the complexities
-    get timeComplex() { return this.timeComplexity; }
-    get spaceComplex() { return this.spaceComplexity; }
+    get timeComplex() {
+        return this.timeComplexity;
+    }
+    get spaceComplex() {
+        return this.spaceComplexity;
+    }
 }

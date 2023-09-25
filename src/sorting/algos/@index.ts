@@ -1,11 +1,10 @@
 import { BubbleSort } from "./bubbleSort";
 import { SelectionSort } from "./selectionSort";
-import { InsertionSort } from './insertionSort';
+import { InsertionSort } from "./insertionSort";
 import { MergeSort } from "./mergeSort";
 import { QuickSort } from "./quickSort";
-import { Colors } from './helpers/colors';
 import { RadixSort } from "./radixSort";
-
+import { Colors } from "./helpers/colors";
 
 // This is the mapping of the sorting algorithm names to their respective classes
 // and will be used in the SortingVisualizer component to create a new instance
@@ -19,7 +18,7 @@ export const Algorithms = {
     selection: SelectionSort,
     radix: RadixSort,
 };
-  
+
 export type AlgorithmName = keyof typeof Algorithms;
 export const AlgorithmLiteral = Object.keys(Algorithms) as AlgorithmName[];
 
@@ -30,7 +29,7 @@ export const AlgorithmLiteral = Object.keys(Algorithms) as AlgorithmName[];
  */
 export interface SortingStep {
     // This is the delay between this step and the next
-    // step of the algorithm. 
+    // step of the algorithm.
     delay: number;
 
     // This is the array of objects that will be used to
@@ -58,5 +57,5 @@ export interface SortingStep {
 export interface SortingStepData {
     value: number;
     percent: number;
-    color: Colors;
+    color: Colors | string;
 }
