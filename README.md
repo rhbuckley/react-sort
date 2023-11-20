@@ -1,4 +1,10 @@
-# Getting Started with Create React App
+# React Sort
+
+This project was made for my CSC 212 (summer '23) class at the University of Rhode Island, and is an online, react-based sorting algorithm visualizer. 
+This project includes Selection, Bubble, Insertion, Merge, Quick and Radix Sorts, and provides different presets to see how using a different array can skew the results of the sort (e.g. using a fully or reverse sorted array). 
+
+[Click here](https://sort.rhbuckley.dev) to see a live preview of this, hosted by Vercel.
+
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
